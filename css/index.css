@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+
+	.bloco_login{
+		margin-top: 150px;
+		border: 1px solid #ccc;
+		padding: 30px;
+		padding-top: 30px;
+		padding-top: 120px;
+		border-radius: 10px;
+		background-image:url(../imagens/logo_commbox.jpg);
+		background-position:center top;
+		background-repeat:no-repeat;
+	}
+	
+	.distancia{
+		margin-top:5px;	
+	}
+	
+	.posicionamento_botao{
+		text-align:right;
+	}
+	
+	.mensagem_erro{
+		margin-top:10px;
+		font-size:14px;
+		color:#F00;	
+	}
+	
+	.menu{
+		width:100%;	
+	}
+	
+	.not_found{
+		font-size:20px;
+		margin-top:100px;
+		text-align:center;
+		font-weight:bold;
+		color:#999;	
+	}
+	
+	tr td:nth-child(3),tr th:nth-child(3){
+		text-align:right;	
+	}
