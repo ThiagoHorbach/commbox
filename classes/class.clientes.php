@@ -82,6 +82,49 @@ class Clientes{
 		fclose($arquivo);
 	}
 	
+	function lista_clientes_pesquisa($pesquisa){
+		$arquivo = fopen("txts/clientes.txt", "r");
+		if ($arquivo) {
+			$ids = "";
+			$contador = 0;
+			$lista = "<table class='table table-striped'>
+							<thead>
+							  <tr>
+									<th>Nome</th>
+									<th>CPF</th>
+									<th>Opções</th>
+								  </tr>
+							</thead>
+							<tbody>";
+				
+			while (($linha = fgets($arquivo, 4096)) !== false) {
+				$dados = explode('|',$linha);
+				//echo "a ".$dados[1]." a ".$pesquisa." = ".stripos($dados[1],$pesquisa)."<br>";
+				if(stripos($dados[1],$pesquisa) === 0){
+						$lista.="
+							<tr>
+								<td>{$dados[1]}</td>
+								<td>{$dados[5]}</td>
+								<td>
+									 <a href='painel.php?m=clientes&a=editar&id={$dados[0]}'>
+										<span class='glyphicon glyphicon-pencil'></span>
+									 </a> 
+									 
+									 <a href='painel.php?m=clientes&a=listar&excluir={$dados[0]}'>
+										<span class='glyphicon glyphicon-remove'></span>
+									 </a>
+								</td>
+							</tr>
+						";
+				}
+			}
+			$lista.="</tbody>
+				</table>";
+			echo $lista;
+		}
+		fclose($arquivo);
+	}
+	
 	function busca_ultimo_id(){
 		$arquivo = fopen("txts/clientes.txt", "r");
 		if ($arquivo) {

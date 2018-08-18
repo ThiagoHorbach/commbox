@@ -42,3 +42,8 @@
 	tr td:nth-child(3),tr th:nth-child(3){
 		text-align:right;	
 	}
+
+
+	.tam_pesq{
+		height:34px;	
+	}
